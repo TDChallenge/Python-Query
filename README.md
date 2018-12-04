@@ -119,3 +119,6 @@ optional arguments:
   --MAX MAX, -M MAX     An optional maximum unix timestamp can be entered, or
                         by default NULL will be entered.
 ```
+## Test Queries
+
+The file "TestQueries.txt" found in this respository contains descriptions of the text queries run as part of the instructions in the challenge.
