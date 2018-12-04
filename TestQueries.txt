@@ -1,0 +1,165 @@
+***** Query 01 *****
+
+This is the the query with the default values.
+
+	> python ./query.py evaluation_mikelafleur sampledata
+
+It returns all rows and columns from the database, and, by default, writes a tabular formated file.
+
+Results are in file 01Query.txt
+
+********************
+
+***** Query 02 *****
+
+This is the query with a limit added, still with default values.
+
+	> python ./query.py -l 10 evaluation_mikelafleur sampledata
+
+It returns all columns from the first 10 rows, and writes to a tabular formated file.
+
+Results are in file 02Query.txt
+
+********************
+
+***** Query 03 *****
+
+This is the query with:
+
+     limit 10, 
+     columns - firstname, lastname, ip, state
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state evaluation_mikelafleur sampledata
+
+It returns the specified columns from the first 10 rows, and writes to a tabular formated file.
+
+Results are in file 03Query.txt
+
+********************
+
+***** Query 04 *****
+
+This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state
+     format csv
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state -f csv evaluation_mikelafleur sampledata
+
+It returns the specified columns from the first 10 rows, and writes to a csv formated file.
+
+Results are in file 04Query.txt
+
+********************
+
+***** Query 05 *****
+
+This query throw an error. This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, arrgh (arrgh is not a valid column)
+     format csv
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state,arrgh -f csv evaluation_mikelafleur sampledata
+
+It returns the specified columns from the first 10 rows, and writes to a csv formated file.
+
+Results are in file 05Query.txt
+
+********************
+
+***** Query 06 *****
+
+This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, time
+     format csv
+     minimum time 1543857126
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state,time -f csv -m 1543857126 evaluation_mikelafleur sampledata
+
+It returns the specified columns from the first 10 rows, and writes to a csv formated file.
+
+Results are in file 06Query.txt
+
+********************
+
+***** Query 07 *****
+
+This query will return no rows. This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, time
+     format csv
+     maximum time 1543857126 (All records are less greater than this number)
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state,time -f csv -M 1543857126 evaluation_mikelafleur sampledata
+
+It returns no rows.
+
+Results are in file 07Query.txt
+
+********************
+
+***** Query 08 *****
+
+This query will return no rows. This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, time
+     format csv
+     maximum time 1543857126
+     minimum time 1543857127 (minimum is greater than maximum)
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state,time -f csv -M 1543857126 -m 1543857127 evaluation_mikelafleur sampledata
+
+It returns no rows.
+
+Results are in file 08Query.txt
+
+********************
+
+***** Query 09 *****
+
+This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, time
+     format csv
+     maximum time 1543857128
+     minimum time 1543857126
+     query_engine hive
+     
+
+	> python ./query.py -l 10 -c firstname,lastname,ip,state,time -f csv -M 1543857128 -m 1543857127 -e hive evaluation_mikelafleur sampledata
+
+This executes the query using Hive rather than Presto, which is the default query engine.
+
+Results are in file 09Query.txt
+
+********************
+
+***** Query 10 *****
+
+This query will return no rows. This is the query with:
+
+     limit 10, 
+     columns firstname, lastname, ip, state, time
+     format tabular
+     maximum time 1543857128
+     minimum time 1543857126
+     query_engine hive
+     
+
+	> python ./query.py -l 20 -c firstname,lastname,ip,state,time -f tabular -M 1543857128 -m 1543857127 -e hive evaluation_mikelafleur sampledata
+
+This executes the query explicitly requesting tabular format.
+
+Results are in file 10Query.txt
+
+********************
+
+
+
