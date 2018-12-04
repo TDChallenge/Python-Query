@@ -1,0 +1,9 @@
+*** Using "evaluation_mikelafleur" as the database.
+
+*** Querying the table "sampledata".
+
+*** Using "presto" to execute the query.
+
+*** Saving the file to "csv" format.
+
+ERROR: The column "arrgh" is not in the table. Available columns are time, id, time_, firstname, lastname, email, gender, ip, state.

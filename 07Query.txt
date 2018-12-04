@@ -1,0 +1,11 @@
+*** Using "evaluation_mikelafleur" as the database.
+
+*** Querying the table "sampledata".
+
+*** Using "presto" to execute the query.
+
+*** Saving the file to "csv" format.
+
+*** Please stand by. The job is running.
+
+END OF JOB: Sorry, but your query returned no records.

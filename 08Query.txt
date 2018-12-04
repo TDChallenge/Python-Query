@@ -1,0 +1,9 @@
+*** Using "evaluation_mikelafleur" as the database.
+
+*** Querying the table "sampledata".
+
+*** Using "presto" to execute the query.
+
+*** Saving the file to "csv" format.
+
+ERROR: The entered "minimum" value, "1543857127", is not less than the entered "maximum" value, "1543857126". Please enter the appropriate values.
